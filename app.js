@@ -5,15 +5,8 @@ const sass = require('node-sass');
 const sassMiddleware = require('node-sass-middleware');
 const path = require("path")
 app.use(express.static(__dirname + '/public'));
+const PORT = process.env.PORT || 3000
 
-// app.use(sassMiddleware({
-//     src: path.join(__dirname, 'public/stylesheets/sass'),
-//     dest: path.join(__dirname, 'public/stylesheets'),
-//     debug: true,
-//     indentedSyntax: true,
-//     outputStyle: 'compressed',
-//     prefix: '/stylesheets'
-//   }));
 
 
 
@@ -27,7 +20,7 @@ app.get("/", (req, res)=>{
 
 
 
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
     console.log("App is online");
 })
 
